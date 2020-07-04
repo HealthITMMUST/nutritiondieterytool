@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import studios.sperry.healthpile.R;
@@ -30,9 +31,9 @@ import static android.content.Context.MODE_PRIVATE;
 public class DiseasesAdapter extends RecyclerView.Adapter<DiseasesAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<Disease> diseaseArrayList;
+    private List<Disease> diseaseArrayList;
 
-    public DiseasesAdapter(Context context, ArrayList<Disease> diseaseArrayList) {
+    public DiseasesAdapter(Context context, List<Disease> diseaseArrayList) {
         this.context = context;
         this.diseaseArrayList = diseaseArrayList;
     }
@@ -49,35 +50,35 @@ public class DiseasesAdapter extends RecyclerView.Adapter<DiseasesAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         final Disease disease = diseaseArrayList.get(position);
-        holder.diseaseIcon.setImageDrawable(disease.getDiseaseIcon());
-        holder.diseaseName.setText(disease.getDiseaseName());
-        holder.diseaseDescription.setText(disease.getDiseaseDescription());
+//        holder.diseaseIcon.setImageDrawable(disease.getDiseaseIcon());
+        holder.diseaseName.setText(disease.getName());
+        holder.diseaseDescription.setText(disease.getDescription());
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String fileName = "SomeName.png";
-
-
-                    Bitmap bitmap = ((BitmapDrawable) disease.getDiseaseIcon()).getBitmap();
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                    byte[] b = baos.toByteArray();
-
-                FileOutputStream fileOutStream;
-                try {
-                    fileOutStream = context.openFileOutput(fileName, MODE_PRIVATE);
-                    fileOutStream.write(b);
-                    fileOutStream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                String fileName = "SomeName.png";
+//
+//                    Bitmap bitmap = ((BitmapDrawable) disease.getDiseaseIcon()).getBitmap();
+//                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//                    byte[] b = baos.toByteArray();
+//
+//                FileOutputStream fileOutStream;
+//                try {
+//                    fileOutStream = context.openFileOutput(fileName, MODE_PRIVATE);
+//                    fileOutStream.write(b);
+//                    fileOutStream.close();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
                     Intent singleIntent = new Intent(context, SingleDiseaseInfo.class);
-                    singleIntent.putExtra("imageString", fileName);
-                    singleIntent.putExtra("diseaseName", disease.getDiseaseName());
-                    singleIntent.putExtra("diseaseDescription", disease.getDiseaseDescription());
+                    singleIntent.putExtra("diseaseName", disease.getName());
+                    singleIntent.putExtra("diseaseDescription", disease.getDescription());
+                    singleIntent.putExtra("diseasePrevention", disease.getPrevention());
+                    singleIntent.putExtra("diseaseNutrition", disease.getNutrition());
                     context.startActivity(singleIntent);
 
             }

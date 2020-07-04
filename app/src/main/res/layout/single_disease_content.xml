@@ -10,14 +10,6 @@
     tools:ignore="UnusedAttribute">
 
     <TextView
-        android:id="@+id/intro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Below are the preventions of Malaria: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/white" />
-
-    <TextView
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,4 +17,5 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:text="@string/text_stars"
         android:textColor="@android:color/white" />
+
 </LinearLayout>

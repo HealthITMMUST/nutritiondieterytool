@@ -7,24 +7,43 @@ import android.graphics.drawable.Drawable;
  */
 public class Disease {
 
-    private String diseaseName, diseaseDescription;
-    private Drawable diseaseIcon;
+    private String id, name,description,position,icon,prevention,nutrition;
 
-    public Disease(String diseaseName, String diseaseDescription, Drawable diseaseIcon) {
-        this.diseaseName = diseaseName;
-        this.diseaseDescription = diseaseDescription;
-        this.diseaseIcon = diseaseIcon;
+    public Disease(String id, String name, String description, String position, String icon, String prevention, String nutrition) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.position = position;
+        this.icon = icon;
+        this.prevention = prevention;
+        this.nutrition = nutrition;
     }
 
-    public String getDiseaseName() {
-        return diseaseName;
+    public String getId() {
+        return id;
     }
 
-    public String getDiseaseDescription() {
-        return diseaseDescription;
+    public String getName() {
+        return name;
     }
 
-    public Drawable getDiseaseIcon() {
-        return diseaseIcon;
+    public String getDescription() {
+        return description;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public String getPrevention() {
+        return prevention;
+    }
+
+    public String getNutrition() {
+        return nutrition;
     }
 }

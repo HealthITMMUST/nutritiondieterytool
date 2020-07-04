@@ -7,6 +7,6 @@ import java.text.DecimalFormat;
  */
 public class Constants {
 
-    public static final String BASE_URL = "https://www.ebebewa.com/index.php/";
+    public static final String BASE_URL = "https://classattendancemmust.000webhostapp.com/healthpile2/index.php/";
 
 }
