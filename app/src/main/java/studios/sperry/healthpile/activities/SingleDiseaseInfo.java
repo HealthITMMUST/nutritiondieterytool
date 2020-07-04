@@ -24,9 +24,10 @@ public class SingleDiseaseInfo extends AppCompatActivity {
 
     String imageString, diseaseName, diseaseDescription;
 
-    ExpandableLayout expandableLayoutPreventions;
+    ExpandableLayout expandableLayoutPreventions, expandableLayoutNutrition;
 
     TextView subTitlePreventions, introPreventions,contentPreventions;
+    TextView subTitleNutrition, introNutrition,contentNutrition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class SingleDiseaseInfo extends AppCompatActivity {
         diseaseNameTextView = findViewById(R.id.diseaseName);
         diseaseDescriptionTextView = findViewById(R.id.diseaseDescription);
         expandableLayoutPreventions = findViewById(R.id.expandableLayoutPreventions);
+        expandableLayoutNutrition = findViewById(R.id.expandableLayoutNutrition);
 
         imageString = getIntent().getStringExtra("imageString");
         diseaseName = getIntent().getStringExtra("diseaseName");
@@ -64,15 +66,33 @@ public class SingleDiseaseInfo extends AppCompatActivity {
                 }
             }
         });
+        expandableLayoutNutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (expandableLayoutNutrition.isExpanded()){
+                    expandableLayoutNutrition.collapse();
+                }else {
+                    expandableLayoutNutrition.expand();
+                }
+            }
+        });
 
         expandableLayoutPreventions.setParentLayoutResource(R.layout.single_disease_sub_title);
         expandableLayoutPreventions.setSecondLayoutResource(R.layout.single_disease_content);
+
+        expandableLayoutNutrition.setParentLayoutResource(R.layout.single_disease_sub_title);
+        expandableLayoutNutrition.setSecondLayoutResource(R.layout.single_disease_content);
 
         subTitlePreventions = expandableLayoutPreventions.parentLayout.findViewById(R.id.subTitle);
         introPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.intro);
         contentPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.content);
 
+    subTitleNutrition = expandableLayoutNutrition.parentLayout.findViewById(R.id.subTitle);
+        introNutrition = expandableLayoutNutrition.secondLayout.findViewById(R.id.intro);
+        contentNutrition = expandableLayoutNutrition.secondLayout.findViewById(R.id.content);
+
         subTitlePreventions.setText("Preventions");
+        subTitleNutrition.setText("Nutrition");
 
     }
 

@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginStart="@dimen/_10sdp">
+
     <TextView
         android:id="@+id/diseaseName"
         android:layout_width="wrap_content"
@@ -24,12 +25,14 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         android:textSize="@dimen/_14sdp"
+        android:textColor="@color/default_text_color"
         android:text="Sample title"/>
     <TextView
         android:id="@+id/diseaseDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
+        android:textColor="@color/default_text_color"
         android:lines="3"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         android:textSize="@dimen/_13sdp"
