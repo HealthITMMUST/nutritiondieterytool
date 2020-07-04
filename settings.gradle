@@ -1,0 +1,2 @@
+rootProject.name='Health Pile'
+include ':app'
