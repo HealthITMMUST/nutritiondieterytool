@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import studios.sperry.healthpile.R;
+import studios.sperry.healthpile.activities.chat_box.ChatBotActivity;
 import studios.sperry.healthpile.activities.faqs.FaqActivity;
 import studios.sperry.healthpile.fragment.HomeFragment;
 
@@ -85,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
                         HomeFragment homeFragment = new HomeFragment();
                         loadSelectedFragment(homeFragment);
                         drawer.closeDrawers();
+                        break;
+
+                    case R.id.pile_bot:
+                        drawer.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, ChatBotActivity.class));
+
                         break;
                     case R.id.nav_faqs:
                         drawer.closeDrawers();

@@ -15,8 +15,8 @@
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/NoToolBarOnly"/>
-
-        <activity android:name=".activities.SingleDiseaseInfo" />
+        <activity android:name=".activities.SingleDiseaseInfo"
+            android:parentActivityName=".activities.MainActivity"/>
         <activity
             android:name=".activities.LaunchActivity"
             android:theme="@style/NoToolBarAndStatusBar">
@@ -27,7 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.intro.IntroActivity" />
-        <activity android:name=".activities.faqs.FaqActivity" />
+        <activity android:name=".activities.faqs.FaqActivity"
+            android:label="Frequently Asked Questions"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity android:name=".activities.chat_box.ChatBotActivity" />
     </application>
 
 </manifest>

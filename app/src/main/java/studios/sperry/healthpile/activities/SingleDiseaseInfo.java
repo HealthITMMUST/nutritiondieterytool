@@ -48,6 +48,10 @@ public class SingleDiseaseInfo extends AppCompatActivity {
         diseaseNutrition = getIntent().getStringExtra("diseaseNutrition");
         diseaseIcon = getIntent().getStringExtra("diseaseIcon");
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(diseaseName);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         diseaseNameTextView.setText(diseaseName);
         diseaseDescriptionTextView.setText(diseaseDescription);
 

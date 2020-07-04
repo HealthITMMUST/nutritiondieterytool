@@ -6,6 +6,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    <string name="non_empty_query">Query should not be empty</string>
+
     <string name="text_stars">A sample answer to the above FAQ will be posted here. The answer may be long. This is a dummy text.</string>
     <string name="home_second">Home Second</string>
 </resources>
