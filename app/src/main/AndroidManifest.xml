@@ -11,9 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:roundIcon">
-        <activity android:name=".SingleDiseaseInfo"></activity>
         <activity
-            android:name=".LaunchActivity"
+            android:name=".activities.MainActivity"
+            android:theme="@style/NoToolBarOnly"/>
+
+        <activity android:name=".activities.SingleDiseaseInfo" />
+        <activity
+            android:name=".activities.LaunchActivity"
             android:theme="@style/NoToolBarAndStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntroActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.intro.IntroActivity" />
+        <activity android:name=".activities.faqs.FaqActivity" />
     </application>
 
 </manifest>

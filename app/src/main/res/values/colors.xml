@@ -5,30 +5,16 @@
     <color name="colorPrimaryDark">#A82A2E</color>
     <color name="colorAccent">#1EC6C1</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="yellow">#FFF5F504</color>
-    <color name="red">#B71C1C</color>
-    <color name="blue">#0073b7</color>
     <color name="background800">#424242</color>
     <color name="default_text_color">#3c415e</color>
     <color name="white_93">#edf8f8f8</color>
-    <color name="startblue">#09c6df</color>
-    <color name="transparent">#00000000</color>
-    <color name="greyish">#51B3B1B1</color>
-    <color name="orange">#ff851b</color>
-    <color name="green">#00a65a</color>
 
-    <color name="grey_60">#666666</color>
-    <color name="grey_90">#263238</color>
     <!-- colors for button style -->
-
-    <color name="gradient_start_color">#4c84ff</color>
-    <color name="gradient_end_color">#18a3fe</color>
 
 
     <!-- colors for tab and screent text -->
 
     <color name="tab_indicator_gray">#c0c0c0</color>
-    <color name="intro_title_color">#000000</color>
-    <color name="intro_description_color">#656565</color>
+
+
 </resources>
