@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.skydoves.expandablelayout.ExpandableLayout;
+
 import java.io.File;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -20,7 +22,10 @@ public class SingleDiseaseInfo extends AppCompatActivity {
     private TextView diseaseNameTextView, diseaseDescriptionTextView;
 
     String imageString, diseaseName, diseaseDescription;
-    
+
+    ExpandableLayout expandableLayoutPreventions, contentPreventions;
+
+    TextView subTitlePreventions, introPreventions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,7 @@ public class SingleDiseaseInfo extends AppCompatActivity {
         diseaseIconImageView = findViewById(R.id.diseaseIcon);
         diseaseNameTextView = findViewById(R.id.diseaseName);
         diseaseDescriptionTextView = findViewById(R.id.diseaseDescription);
+        expandableLayoutPreventions = findViewById(R.id.expandableLayoutPreventions);
 
         imageString = getIntent().getStringExtra("imageString");
         diseaseName = getIntent().getStringExtra("diseaseName");
@@ -40,6 +46,18 @@ public class SingleDiseaseInfo extends AppCompatActivity {
         File filePath = getFileStreamPath(imageString);
         Drawable d = Drawable.createFromPath(filePath.toString());
         diseaseIconImageView.setImageDrawable(d);
+
+        setUpExpandableLayoutPreventions();
+
+    }
+
+    private void setUpExpandableLayoutPreventions() {
+        expandableLayoutPreventions.setParentLayoutResource(R.layout.item_section_parent);
+        expandableLayoutPreventions.setSecondLayoutResource(R.layout.layout_second1);
+
+        subTitlePreventions = expandableLayoutPreventions.parentLayout.findViewById(R.id.subTitle);
+        introPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.intro);
+        contentPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.content);
 
     }
 
