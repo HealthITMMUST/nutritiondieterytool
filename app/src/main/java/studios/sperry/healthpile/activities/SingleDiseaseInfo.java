@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,9 +24,9 @@ public class SingleDiseaseInfo extends AppCompatActivity {
 
     String imageString, diseaseName, diseaseDescription;
 
-    ExpandableLayout expandableLayoutPreventions, contentPreventions;
+    ExpandableLayout expandableLayoutPreventions;
 
-    TextView subTitlePreventions, introPreventions;
+    TextView subTitlePreventions, introPreventions,contentPreventions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +53,26 @@ public class SingleDiseaseInfo extends AppCompatActivity {
     }
 
     private void setUpExpandableLayoutPreventions() {
-        expandableLayoutPreventions.setParentLayoutResource(R.layout.item_section_parent);
-        expandableLayoutPreventions.setSecondLayoutResource(R.layout.layout_second1);
+
+        expandableLayoutPreventions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (expandableLayoutPreventions.isExpanded()){
+                    expandableLayoutPreventions.collapse();
+                }else {
+                    expandableLayoutPreventions.expand();
+                }
+            }
+        });
+
+        expandableLayoutPreventions.setParentLayoutResource(R.layout.single_disease_sub_title);
+        expandableLayoutPreventions.setSecondLayoutResource(R.layout.single_disease_content);
 
         subTitlePreventions = expandableLayoutPreventions.parentLayout.findViewById(R.id.subTitle);
         introPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.intro);
         contentPreventions = expandableLayoutPreventions.secondLayout.findViewById(R.id.content);
+
+        subTitlePreventions.setText("Preventions");
 
     }
 

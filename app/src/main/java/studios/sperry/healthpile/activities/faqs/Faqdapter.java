@@ -17,7 +17,7 @@ import studios.sperry.healthpile.R;
 
 public class Faqdapter extends RecyclerView.Adapter<Faqdapter.ViewHolder> {
 
-    ArrayList<FAQ_item> faq_items;
+    private ArrayList<FAQ_item> faq_items;
 
     public Faqdapter(ArrayList<FAQ_item> faq_items) {
         this.faq_items = faq_items;

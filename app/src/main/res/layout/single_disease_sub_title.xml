@@ -13,6 +13,6 @@
     android:layout_height="wrap_content"
     android:textColor="@color/default_text_color"
       android:textAppearance="@style/TextAppearance.AppCompat.Title"
-    tools:text="Title"
+      android:text="Tile"
       android:lines="1"/>
 </LinearLayout>

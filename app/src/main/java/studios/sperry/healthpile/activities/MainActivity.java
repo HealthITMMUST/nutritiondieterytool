@@ -10,11 +10,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
 import studios.sperry.healthpile.R;
 import studios.sperry.healthpile.activities.faqs.FaqActivity;
+import studios.sperry.healthpile.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setUpToolBar();
         setUpDrawer();
         setUpNavigation();
+
+        HomeFragment homeFragment = new HomeFragment();
+        loadSelectedFragment(homeFragment);
 
     }
 
@@ -76,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 int selectId = item.getItemId();
                 switch (selectId) {
                     case R.id.nav_home:
+                        HomeFragment homeFragment = new HomeFragment();
+                        loadSelectedFragment(homeFragment);
                         drawer.closeDrawers();
                         break;
                     case R.id.nav_faqs:
@@ -87,7 +95,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
+
+    private void loadSelectedFragment(Fragment selectedFragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,selectedFragment).commit();
+    }
 
 }
