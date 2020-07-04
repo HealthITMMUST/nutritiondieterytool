@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -54,6 +56,12 @@ public class DiseasesAdapter extends RecyclerView.Adapter<DiseasesAdapter.ViewHo
         holder.diseaseName.setText(disease.getName());
         holder.diseaseDescription.setText(disease.getDescription());
 
+        Picasso.get()
+                .load(disease.getBaseUrl())
+                .error(context.getDrawable(R.drawable.notfound))
+                .placeholder(context.getDrawable(R.drawable.placeholder))
+                .into(holder.diseaseIcon);
+
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +87,7 @@ public class DiseasesAdapter extends RecyclerView.Adapter<DiseasesAdapter.ViewHo
                     singleIntent.putExtra("diseaseDescription", disease.getDescription());
                     singleIntent.putExtra("diseasePrevention", disease.getPrevention());
                     singleIntent.putExtra("diseaseNutrition", disease.getNutrition());
+                    singleIntent.putExtra("diseaseIcon", disease.getBaseUrl());
                     context.startActivity(singleIntent);
 
             }

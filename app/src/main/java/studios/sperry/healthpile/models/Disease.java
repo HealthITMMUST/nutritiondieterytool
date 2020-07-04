@@ -7,9 +7,9 @@ import android.graphics.drawable.Drawable;
  */
 public class Disease {
 
-    private String id, name,description,position,icon,prevention,nutrition;
+    private String id, name,description,position,icon,prevention,nutrition,baseUrl;
 
-    public Disease(String id, String name, String description, String position, String icon, String prevention, String nutrition) {
+    public Disease(String id, String name, String description, String position, String icon, String prevention, String nutrition, String baseUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,6 +17,7 @@ public class Disease {
         this.icon = icon;
         this.prevention = prevention;
         this.nutrition = nutrition;
+        this.baseUrl = baseUrl;
     }
 
     public String getId() {
@@ -45,5 +46,9 @@ public class Disease {
 
     public String getNutrition() {
         return nutrition;
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
     }
 }

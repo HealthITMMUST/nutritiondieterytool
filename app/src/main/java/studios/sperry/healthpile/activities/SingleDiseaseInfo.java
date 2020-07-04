@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.skydoves.expandablelayout.ExpandableLayout;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
@@ -23,7 +24,7 @@ public class SingleDiseaseInfo extends AppCompatActivity {
     private CircleImageView diseaseIconImageView;
     private TextView diseaseNameTextView, diseaseDescriptionTextView;
 
-    String diseaseName, diseaseDescription, diseasePrevention, diseaseNutrition;
+    String diseaseName, diseaseDescription, diseasePrevention, diseaseNutrition, diseaseIcon;
 
     ExpandableLayout expandableLayoutPreventions, expandableLayoutNutrition;
 
@@ -45,6 +46,7 @@ public class SingleDiseaseInfo extends AppCompatActivity {
         diseaseDescription = getIntent().getStringExtra("diseaseDescription");
         diseasePrevention = getIntent().getStringExtra("diseasePrevention");
         diseaseNutrition = getIntent().getStringExtra("diseaseNutrition");
+        diseaseIcon = getIntent().getStringExtra("diseaseIcon");
 
         diseaseNameTextView.setText(diseaseName);
         diseaseDescriptionTextView.setText(diseaseDescription);
@@ -53,6 +55,11 @@ public class SingleDiseaseInfo extends AppCompatActivity {
 //        Drawable d = Drawable.createFromPath(filePath.toString());
 //        diseaseIconImageView.setImageDrawable(d);
 
+        Picasso.get()
+                .load(diseaseIcon)
+                .error(getDrawable(R.drawable.notfound))
+                .placeholder(getDrawable(R.drawable.placeholder))
+                .into(diseaseIconImageView);
         setUpExpandableLayoutPreventions();
 
     }
