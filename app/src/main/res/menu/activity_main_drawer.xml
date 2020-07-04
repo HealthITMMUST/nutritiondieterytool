@@ -13,6 +13,10 @@
     </group>
 
     <group>
+            <item android:id="@+id/nav_notifications"
+                android:icon="@drawable/ic_notifications"
+                android:title="Notifications" />
+
             <item android:id="@+id/nav_faqs"
                 android:icon="@drawable/ic_faqs"
                 android:title="FAQs" />

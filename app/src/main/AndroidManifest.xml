@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="studios.sperry.healthpile">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_health_pile"
@@ -12,11 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:roundIcon">
+        <activity android:name=".activities.notifications.NotificationsActivity"
+            android:label="Notifications"
+            android:parentActivityName=".activities.MainActivity"/>
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/NoToolBarOnly"/>
-        <activity android:name=".activities.SingleDiseaseInfo"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:theme="@style/NoToolBarOnly" />
+        <activity
+            android:name=".activities.SingleDiseaseInfo"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.LaunchActivity"
             android:theme="@style/NoToolBarAndStatusBar">
@@ -27,9 +32,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.intro.IntroActivity" />
-        <activity android:name=".activities.faqs.FaqActivity"
+        <activity
+            android:name=".activities.faqs.FaqActivity"
             android:label="Frequently Asked Questions"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:parentActivityName=".activities.MainActivity" />
         <activity android:name=".activities.chat_box.ChatBotActivity" />
     </application>
 

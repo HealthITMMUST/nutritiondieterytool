@@ -18,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 import studios.sperry.healthpile.R;
 import studios.sperry.healthpile.activities.chat_box.ChatBotActivity;
 import studios.sperry.healthpile.activities.faqs.FaqActivity;
+import studios.sperry.healthpile.activities.notifications.NotificationsActivity;
 import studios.sperry.healthpile.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -91,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.pile_bot:
                         drawer.closeDrawers();
                         startActivity(new Intent(MainActivity.this, ChatBotActivity.class));
+
+                    case R.id.nav_notifications:
+                        drawer.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
 
                         break;
                     case R.id.nav_faqs:
