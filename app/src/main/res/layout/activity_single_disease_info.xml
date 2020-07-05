@@ -29,19 +29,19 @@
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/default_text_color"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/diseaseDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:ellipsize="end"
-            android:lines="3"
-            android:text="Sample Description"
+            android:text="Sample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample DescriptionSample Description"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
             android:textColor="@color/default_text_color"
-            android:textSize="@dimen/_13sdp" />
+            android:lineSpacingMultiplier="1.4"
+            android:textSize="@dimen/_15sdp" />
 
 
         <com.skydoves.expandablelayout.ExpandableLayout
