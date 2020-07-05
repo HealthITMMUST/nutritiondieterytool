@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/pile_bot"
+            android:icon="@drawable/ic_bot"
+            android:title="Ask Health Pile Bot" />
+
+    </group>
+
+    <group>
+            <item android:id="@+id/nav_notifications"
+                android:icon="@drawable/ic_notifications"
+                android:title="Notifications" />
+
+            <item android:id="@+id/nav_faqs"
+                android:icon="@drawable/ic_faqs"
+                android:title="FAQs" />
+    </group>
+</menu>
